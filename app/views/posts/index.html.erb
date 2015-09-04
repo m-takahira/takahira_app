@@ -5,18 +5,17 @@
 <% @posts.in_groups_of(4) do |group| %>
   <div class="row">
     <% group.compact.each do |post| %>
-      <h4><%= link_to post.user, post %></h4>
-      <%= post.description %>
-      <div class="col-md-3">
-        <%= image_tag post.picture1_url, width: '15%' if post.picture1.present? %>
-        <%= image_tag post.picture2_url, width: '15%' if post.picture2.present? %>
-        <%= image_tag post.picture3_url, width: '15%' if post.picture3.present? %>
-        <%= image_tag post.picture4_url, width: '15%' if post.picture4.present? %>
-      </div>
-    <% end %>
+      <h3><%= link_to post.user, post ,class:"cl-effect-21",id:"cl-effect-21"%></h3>
+      <font color="#696969"><%= post.description %><br></font>
+      <%= image_tag post.picture1_url, width: '20%' if post.picture1.present? %>
+      <%= image_tag post.picture2_url, width: '20%' if post.picture2.present? %>
+      <%= image_tag post.picture3_url, width: '20%' if post.picture3.present? %>
+      <%= image_tag post.picture4_url, width: '20%' if post.picture4.present? %>
+      <br><br>
+      <% end %>
   </div>
 <% end %>
 
-<br>
+<br/>
 
-<%= link_to 'New Post', new_post_path %>
+<h3><%= link_to '新しく投稿する', new_post_path %></h3>
